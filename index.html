@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!--  daisyui and tailwind link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              grays: "#030712"
+            },
+          },
+        },
+      };
+    </script>
+
+   
+  </head>
+  <body>
+    <div class="container mx-auto">
+      <!-- best offers section  -->
+      <div>
+        <h3 class="text-center font-extrabold text-6xl py-8 text-grays">
+          Best offers for you
+        </h3>
+        <div class="flex gap-8">
+          <div
+            class="bg-[#FFBF0F] w-[573px] h-[220px] rounded-2xl  flex px-6 py-6 justify-between"
+          >
+            <div class="pl-8 pt-8 rounded-">
+              <h1 class="font-bold text-4xl">15% OFF</h1>
+              <p class="font-semibold text-xl">on your next purchase</p>
+              <p class="text-grays">use by january 2024</p>
+            </div>
+            <div class="text-center pr-10 pt-10">
+              <h3 class="font-bold text-4xl">NEW<sub>15</sub></h3>
+              <p>Coupon Code</p>
+            </div>
+          </div>
+          <div
+            class="bg-[#F78C9C] rounded-2xl w-[573px] h-[220px] flex px-6 py-6 justify-between"
+          >
+            <div class="pl-8 pt-8">
+              <h1 class="font-bold text-4xl">15% OFF</h1>
+              <p class="font-semibold text-xl">on your next purchase</p>
+              <p class="text-grays">use by january 2024</p>
+            </div>
+            <div class="text-center pr-10 pt-10">
+              <h3 class="font-bold text-4xl">Couple 20</h3>
+              <p>Coupon Code</p>
+            </div>
+        </div>
+        
+    </div>
+    <div class="border-2 px-6 py-4 w-40 border-green-300  rounded-xl mt-8 mx-auto">See All Offers</div>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
