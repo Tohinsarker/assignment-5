@@ -3,6 +3,7 @@ const idnumber = "A1 A2 A3 A4 B1 B2 B3 B4 C1 C2 C3 C4 D1 D2 D3 D4 E1 E2 E3 E4 F1
 
 
 let seats40 = 40;
+let limit = 0;
 const totalSeat = document.getElementById("totalSeat");
 let getTotalSeatInnertext = parseInt(totalSeat.innerText);
 console.log(typeof getTotalSeatInnertext)
