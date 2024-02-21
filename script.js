@@ -105,16 +105,21 @@ applyBtnId.addEventListener("click", function () {
 
 document.getElementById('submit').addEventListener("click", function(){
   const pasName = document.getElementById("pName");
-  const passNameLength = (pasName.value).length;
-  if(passNameLength<=0){
+  let passNameLength = pasName.value;
+  if(passNameLength == ""){
     // getId(nameMsg).style.classList.remove('hidden')
-    getId("nameMsg").classList.remove("hidden")
+    getId("nameMsg").classList.remove("hidden");
   }
   
+
+
  
   const pasNumber = document.getElementById("pNumber");
   const passNumber = (pasNumber.value).length;
 
+  if(pasNumber.value == ""){
+    getId("emptyNumberField").classList.remove("hidden")
+  }
 
   console.log(passNumber)
 
@@ -132,3 +137,27 @@ function getId(id){
 
   return returnId;
 }
+
+
+
+let i = 0
+document.getElementById("pName").addEventListener("keypress", function(event){
+  i++;
+
+  if(i>=1){
+    getId("nameMsg").style.display = 'none';
+   
+  }
+
+  
+})
+
+
+let j=0;
+document.getElementById('pNumber').addEventListener("keypress", function(e){
+j++;
+  if(j>=1){
+    getId("emptyNumberField").style.display = 'none';
+   
+  }
+})
