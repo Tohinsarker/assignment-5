@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+    <!--  daisyui and tailwind link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              grays: "#030712",
+              gren: "#1DD100",
+              gray1: "#F7F8F8",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-orange-100 h-screen flex justify-center items-center ">
+    <div class="w-[500px]  p-16 bg-white rounded-lg text-center flex flex-col items-center ">
+        <div>
+            <img class="w-30 h-28" src="./assets/success.png" alt="" srcset="">
+        </div>
+        <h2 class="font-bold py-8 text-gren text-4xl ">Success</h2>
+        <p>Thank you for Booking Our Bus Seats. <br> We are working hard to find the best service and deals for your</p>
+        <p>Shortly you will find a confirmation in your email</p>
+        <a class="bg-gren px-8 text-4xl text-white rounded-xl py-4 mt-6 cursor-pointer" href="index.html">Continue</a>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
