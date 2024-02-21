@@ -19,8 +19,8 @@ document.getElementById("seat").addEventListener("click", function (e) {
     document.getElementById("applyBtn").removeAttribute("disabled");
   }
 
-  if(selectSeatLength>=1){
-    document.getElementById("submit").removeAttribute("disabled")
+  if (selectSeatLength >= 1) {
+    document.getElementById("submit").removeAttribute("disabled");
   }
 
   const seatNumbers = idnumber.split(" ");
@@ -87,7 +87,36 @@ applyBtnId.addEventListener("click", function () {
   }
 });
 
+// document.getElementById("submit").addEventListener("click", function() {
+//   const pName = document.getElementById('pName');
+//   const getName = pName.value;
+//   const pNumber = retunInputValue("pNumber");
+//   console.log('name', pName, 'num', pNumber)
+//   window.location.href = "./success.html";
+ 
+// });
 
-document.getElementById("submit").addEventListener("click",()=>{
-  
+// function retunInputValue(id) {
+//   const fieldId = document.getElementById(id);
+//   const getText = fieldId.value;
+
+//   return getText;
+// }
+
+document.getElementById('submit').addEventListener("click", function(){
+  const pasName = document.getElementById("pName");
+  const passNameLength = (pasName.value).length;
+ 
+  const pasNumber = document.getElementById("pNumber");
+  const passNumber = pasName.value
+
+  if((passNameLength>0) && pasName>0){
+    window.location.href = './success.html';
+  }
+
+
+
+
+  console.log("ok")
+
 })
