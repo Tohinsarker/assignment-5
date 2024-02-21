@@ -15,17 +15,17 @@ let getTotalTicketPrice = returnInnerText("totalPrice");
 document.getElementById("seat").addEventListener("click", function (e) {
   // increase seat limit
   selectSeatLength = selectSeatLength + 1;
-  //   if(selectSeatLength == 4){
-  //     document.getElementById("applyBtn").removeAttribute('disabled');
-  // }
+  if (selectSeatLength === 4) {
+    document.getElementById("applyBtn").removeAttribute("disabled");
+  }
+
+  if(selectSeatLength>=1){
+    document.getElementById("submit").removeAttribute("disabled")
+  }
 
   const seatNumbers = idnumber.split(" ");
 
   const getSeatNumber = e.target.innerText;
-  // console.log(getSeatNumber)
-  // for(id of seatNumbers){
-  //     console.log(id)
-  // }
 
   const bookSeat = seatNumbers.includes(getSeatNumber);
 
@@ -71,20 +71,23 @@ const applyBtnId = document.getElementById("applyBtn");
 const couponCodeId = document.getElementById("coupnCode");
 const grandTotalId = returnInnerText("grandTotal");
 
-
-//  Apply Discount Price function 
+//  Apply Discount Price function
 
 applyBtnId.addEventListener("click", function () {
   const getCouponCode = couponCodeId.value;
- 
+
   if (getCouponCode == "NEW15") {
     let discountPrice = getTotalTicketPrice * 0.15;
-    document.getElementById('discountPrice').innerText = discountPrice;
-    document.getElementById('grandTotal').innerText = getTotalTicketPrice - discountPrice;
-    document.getElementById("discountDiv").classList.remove("hidden")
-
-
+    document.getElementById("discountPrice").innerText = discountPrice;
+    document.getElementById("grandTotal").innerText =
+      getTotalTicketPrice - discountPrice;
+    document.getElementById("discountDiv").classList.remove("hidden");
   } else {
     alert("Wrong Coupon Code");
   }
 });
+
+
+document.getElementById("submit").addEventListener("click",()=>{
+  
+})
