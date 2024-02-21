@@ -98,7 +98,7 @@
             class="bg-[#F78C9C] rounded-2xl lg:w-[573px] lg:h-[220px] flex px-6 py-6 justify-between"
           >
             <div class="pl-8 pt-8">
-              <h1 class="font-bold text-4xl">15% OFF</h1>
+              <h1 class="font-bold text-4xl">20% OFF</h1>
               <p class="font-semibold text-xl">on your next purchase</p>
               <p class="text-grays">use by january 2024</p>
             </div>
@@ -153,7 +153,9 @@
                   <span class="pl-4 text-2xl" id="totalSeat">40</span> Seats
                   Left
                 </p>
+ 
               </div>
+             
             </div>
 
             <div class="pt-8 lg:pl-8 items-center flex   flex-col">
@@ -195,6 +197,7 @@
 
               <div>
                 <div id="seat">
+                  <div class="flex justify-end pr-8 pb-8"><img class="w-12 " src="./assets/steering.jpg" alt=""></div>
                   <ul class="flex justify-between items-center mb-6">
                     <li class="disabled" >A</li>
                     <li
@@ -475,7 +478,7 @@
               ></div>
               <div class="font-semibold flex justify-between">
                 <p>
-                  Seat <span class="bg-gren px-2 rounded-md text-white">0</span>
+                  Seat <span class="bg-gren px-2 rounded-md text-white"><span id="seatBooking">0</span></span>
                 </p>
                 <p>Class</p>
                 <p>Price</p>
@@ -538,10 +541,11 @@
                   >
                   <input
                     class="border-2 rounded-lg p-6 text-xl mt-4"
-                    type="text"
+                    type="number"
                     placeholder="Enter your phone number"
                     required
                     id="pNumber"
+                    onKeyPress="pNUmberKeyPress()"
                   />
                 </div>
                 <div id="emptyNumberField" class="hidden"><p class="text-red-600 pt-2">Please Enter your Phone number</p></div>

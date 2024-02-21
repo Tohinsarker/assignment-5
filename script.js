@@ -4,6 +4,9 @@ const idnumber =
 let seats40 = 40;
 let selectSeatLength = 0;
 const bookedSeat = [];
+
+let phoneNumber=[];
+console.log('ohone', phoneNumber)
 const getShowTicketId = document.getElementById("showTicket");
 const discountPrice = document.getElementById("discountPrice");
 const getTicketPrice = returnInnerText("ticketPrice");
@@ -14,71 +17,61 @@ let getTotalTicketPrice = returnInnerText("totalPrice");
 
 const seatNumbers = idnumber.split(" ");
 
-
-
-
 document.getElementById("seat").addEventListener("click", function (e) {
   const getSeatNumber = e.target.innerText;
   const bookSeat = seatNumbers.includes(getSeatNumber);
 
-  if( bookedSeat.includes(getSeatNumber)){
-      
+  if (bookedSeat.includes(getSeatNumber)) {
     return;
-  }else{
+  } else {
+    if (bookSeat) {
+      selectSeatLength++;
+      if (selectSeatLength <= 4) {
+        getId("seatBooking").innerText = selectSeatLength;
+      }
+      // increase seat limit
+      if (selectSeatLength === 4) {
+        document.getElementById("applyBtn").removeAttribute("disabled");
+      }
 
+      
+      if ((selectSeatLength >= 1) && (phoneNumber>0) ) {
+        document.getElementById("submit").removeAttribute("disabled");
+      }
 
+      if (selectSeatLength <= 4) {
+        getTotalTicketPrice = getTotalTicketPrice + getTicketPrice;
+        document.getElementById("totalPrice").innerText = getTotalTicketPrice;
+        getId("grandTotal").innerText = getTotalTicketPrice;
 
-  if (bookSeat) {
-    selectSeatLength++;
-  // increase seat limit
-  if (selectSeatLength === 4) {
-    document.getElementById("applyBtn").removeAttribute("disabled");
+        getTotalSeatInnertext--;
+        totalSeat.innerText = getTotalSeatInnertext;
+        document.getElementById(getSeatNumber).style.background = "green";
+
+        const li = document.createElement("li");
+        const seat = document.createElement("p");
+        seat.innerText = getSeatNumber;
+
+        const trainClass = document.createElement("p");
+        trainClass.innerText = "Economy";
+        trainClass.classList.add("pStyle");
+
+        const showPrice = document.createElement("p");
+        showPrice.innerText = getTicketPrice;
+        li.classList.add("showSeatPlan");
+
+        li.appendChild(seat);
+        li.appendChild(trainClass);
+        li.appendChild(showPrice);
+
+        // CHECK SEAT ALL READY BOOKED
+
+        bookedSeat.push(getSeatNumber);
+
+        getShowTicketId.appendChild(li);
+      }
+    }
   }
-
-  if (selectSeatLength >= 1) {
-    document.getElementById("submit").removeAttribute("disabled");
-  }
-
-
-
-  if (selectSeatLength <= 4) {
-    getTotalTicketPrice = getTotalTicketPrice + getTicketPrice;
-    document.getElementById("totalPrice").innerText = getTotalTicketPrice;
-
-     
-
-      getTotalSeatInnertext--;
-      totalSeat.innerText = getTotalSeatInnertext;
-      document.getElementById(getSeatNumber).style.background = "green";
-    
-
-    const li = document.createElement("li");
-    const seat = document.createElement("p");
-    seat.innerText = getSeatNumber;
-
-    const trainClass = document.createElement("p");
-    trainClass.innerText = "Economy";
-    trainClass.classList.add("pStyle");
-
-    const showPrice = document.createElement("p");
-    showPrice.innerText = getTicketPrice;
-    li.classList.add("showSeatPlan");
-
-    li.appendChild(seat);
-    li.appendChild(trainClass);
-    li.appendChild(showPrice);
-
-    // CHECK SEAT ALL READY BOOKED 
-
-  
-    
-    bookedSeat.push(getSeatNumber);
-
-      getShowTicketId.appendChild(li);
-   
-  }
-}
-}
 });
 
 function returnInnerText(id) {
@@ -104,17 +97,14 @@ applyBtnId.addEventListener("click", function () {
     getId("discountPrice").innerText = discountPrice;
     getId("grandTotal").innerText = getTotalTicketPrice - discountPrice;
     document.getElementById("discountDiv").classList.remove("hidden");
-    getId('couponInputField').classList.add("hidden");
-
-  }else if(getCouponCode == "Couple 20"){
-    let discountPrice = getTotalTicketPrice * 0.20;
+    getId("couponInputField").classList.add("hidden");
+  } else if (getCouponCode == "Couple 20") {
+    let discountPrice = getTotalTicketPrice * 0.2;
     getId("discountPrice").innerText = discountPrice;
     document.getElementById("discountDiv").classList.remove("hidden");
     getId("grandTotal").innerText = getTotalTicketPrice - discountPrice;
-    getId('couponInputField').classList.add("hidden");
-  }
-  
-  else {
+    getId("couponInputField").classList.add("hidden");
+  } else {
     alert("Wrong Coupon Code");
   }
 });
@@ -125,7 +115,7 @@ applyBtnId.addEventListener("click", function () {
 //   const pNumber = retunInputValue("pNumber");
 //   console.log('name', pName, 'num', pNumber)
 //   window.location.href = "./success.html";
- 
+
 // });
 
 // function retunInputValue(id) {
@@ -135,61 +125,57 @@ applyBtnId.addEventListener("click", function () {
 //   return getText;
 // }
 
-document.getElementById('submit').addEventListener("click", function(){
+document.getElementById("submit").addEventListener("click", function () {
   const pasName = document.getElementById("pName");
   let passNameLength = pasName.value;
-  if(passNameLength == ""){
+  if (passNameLength == "") {
     // getId(nameMsg).style.classList.remove('hidden')
     getId("nameMsg").classList.remove("hidden");
   }
-  
 
-
- 
   const pasNumber = document.getElementById("pNumber");
-  const passNumber = (pasNumber.value).length;
+  const passNumber = pasNumber.value.length;
 
-  if(pasNumber.value == ""){
-    getId("emptyNumberField").classList.remove("hidden")
+  if (pasNumber.value == "") {
+    getId("emptyNumberField").classList.remove("hidden");
   }
 
-  console.log(passNumber)
+  console.log(passNumber);
 
-  if(passNumber>0){
-    window.location.href = './success.html';
-
+  if (passNumber > 0) {
+    window.location.href = "./success.html";
   }
-})
+});
 
-
-
-
-function getId(id){
+function getId(id) {
   const returnId = document.getElementById(id);
 
   return returnId;
 }
 
-
-
-let i = 0
-document.getElementById("pName").addEventListener("keypress", function(event){
+let i = 0;
+document.getElementById("pName").addEventListener("keypress", function (event) {
   i++;
 
-  if(i>=1){
-    getId("nameMsg").style.display = 'none';
-   
+  if (i >= 1) {
+    getId("nameMsg").style.display = "none";
   }
-
-  
-})
+});
 
 
-let j=0;
-document.getElementById('pNumber').addEventListener("keypress", function(e){
-j++;
-  if(j>=1){
-    getId("emptyNumberField").style.display = 'none';
-   
+
+
+document.getElementById("pNumber").addEventListener("keypress", function (e) {
+ 
+
+  phoneNumber++;
+  if (phoneNumber >= 1) {
+    getId("emptyNumberField").style.display = "none";
   }
-})
+});
+
+
+function pNUmberKeyPress(){
+let val = getId("pNumber").value;
+console.log('val', val)
+}
