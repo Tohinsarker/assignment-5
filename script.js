@@ -106,17 +106,29 @@ applyBtnId.addEventListener("click", function () {
 document.getElementById('submit').addEventListener("click", function(){
   const pasName = document.getElementById("pName");
   const passNameLength = (pasName.value).length;
+  if(passNameLength<=0){
+    // getId(nameMsg).style.classList.remove('hidden')
+    getId("nameMsg").classList.remove("hidden")
+  }
+  
  
   const pasNumber = document.getElementById("pNumber");
-  const passNumber = pasName.value
+  const passNumber = (pasNumber.value).length;
 
-  if((passNameLength>0) && pasName>0){
+
+  console.log(passNumber)
+
+  if(passNumber>0){
     window.location.href = './success.html';
+
   }
-
-
-
-
-  console.log("ok")
-
 })
+
+
+
+
+function getId(id){
+  const returnId = document.getElementById(id);
+
+  return returnId;
+}
