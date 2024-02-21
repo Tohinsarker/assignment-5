@@ -3,7 +3,7 @@ const idnumber =
 
 let seats40 = 40;
 let selectSeatLength = 0;
-
+const bookedSeat = [];
 const getShowTicketId = document.getElementById("showTicket");
 const discountPrice = document.getElementById("discountPrice");
 const getTicketPrice = returnInnerText("ticketPrice");
@@ -12,9 +12,25 @@ let getTotalSeatInnertext = returnInnerText("totalSeat");
 
 let getTotalTicketPrice = returnInnerText("totalPrice");
 
+const seatNumbers = idnumber.split(" ");
+
+
+
+
 document.getElementById("seat").addEventListener("click", function (e) {
+  const getSeatNumber = e.target.innerText;
+  const bookSeat = seatNumbers.includes(getSeatNumber);
+
+  if( bookedSeat.includes(getSeatNumber)){
+      
+    return;
+  }else{
+
+
+
+  if (bookSeat) {
+    selectSeatLength++;
   // increase seat limit
-  selectSeatLength = selectSeatLength + 1;
   if (selectSeatLength === 4) {
     document.getElementById("applyBtn").removeAttribute("disabled");
   }
@@ -23,20 +39,18 @@ document.getElementById("seat").addEventListener("click", function (e) {
     document.getElementById("submit").removeAttribute("disabled");
   }
 
-  const seatNumbers = idnumber.split(" ");
 
-  const getSeatNumber = e.target.innerText;
-
-  const bookSeat = seatNumbers.includes(getSeatNumber);
 
   if (selectSeatLength <= 4) {
     getTotalTicketPrice = getTotalTicketPrice + getTicketPrice;
     document.getElementById("totalPrice").innerText = getTotalTicketPrice;
-    if (bookSeat) {
+
+     
+
       getTotalSeatInnertext--;
       totalSeat.innerText = getTotalSeatInnertext;
       document.getElementById(getSeatNumber).style.background = "green";
-    }
+    
 
     const li = document.createElement("li");
     const seat = document.createElement("p");
@@ -54,8 +68,17 @@ document.getElementById("seat").addEventListener("click", function (e) {
     li.appendChild(trainClass);
     li.appendChild(showPrice);
 
-    getShowTicketId.appendChild(li);
+    // CHECK SEAT ALL READY BOOKED 
+
+  
+    
+    bookedSeat.push(getSeatNumber);
+
+      getShowTicketId.appendChild(li);
+   
   }
+}
+}
 });
 
 function returnInnerText(id) {
