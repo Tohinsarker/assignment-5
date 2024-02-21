@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-
+    <link rel="stylesheet" href="./style.css">
     <!--  daisyui and tailwind link -->
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css"
@@ -25,6 +25,7 @@
         },
       };
     </script>
+    
   </head>
   <body>
     <div class="container mx-auto">
@@ -104,20 +105,25 @@
                   alt=""
                   srcset=""
                 />
-                <p><span class="pl-4 text-2xl" id="totalSeat">40</span> Seats Left</p>
+                <p>
+                  <span class="pl-4 text-2xl" id="totalSeat">40</span> Seats
+                  Left
+                </p>
               </div>
             </div>
 
             <div class="pt-8 pl-8 items-center flex flex-col">
               <img src="./assets/fare.png" alt="" srcset="" />
-              <h4 class="font-bold text-2xl">550 Taka</h4>
+              <h4 class="font-bold text-2xl">
+                <span id="ticketPrice">550</span> Taka
+              </h4>
               <p>Per Seat</p>
             </div>
           </div>
 
           <!-- select your seat  -->
-          <div class="bg-white w-full flex justify-between gap-6 p-12">
-            <div class="w-2/3">
+          <div class="bg-white w-full flex justify-between gap-20 p-12">
+            <div class="w-[60%]">
               <h3>Select Your Seat</h3>
               <!-- **************** dotted line ********************* -->
               <div
@@ -148,22 +154,26 @@
                   <ul class="flex justify-between items-center mb-6">
                     <li class="">A</li>
                     <li
-                      id="A1" class="A1 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
+                      id="A1"
+                      class="A1 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
                     >
                       A1
                     </li>
                     <li
-                      id="A2" class="A2 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center mr-4"
+                      id="A2"
+                      class="A2 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center mr-4"
                     >
                       A2
                     </li>
                     <li
-                      id="A3" class="A3 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
+                      id="A3"
+                      class="A3 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
                     >
                       A3
                     </li>
                     <li
-                      id="A4" class="A4 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
+                      id="A4"
+                      class="A4 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
                     >
                       A4
                     </li>
@@ -171,22 +181,26 @@
                   <ul class="flex justify-between items-center mb-6">
                     <li>B</li>
                     <li
-                      id="B1" class="B1 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
+                      id="B1"
+                      class="B1 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
                     >
                       B1
                     </li>
                     <li
-                      id="B2" class="B2 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center mr-4"
+                      id="B2"
+                      class="B2 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center mr-4"
                     >
                       B2
                     </li>
                     <li
-                      id="B3" class="B3 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
+                      id="B3"
+                      class="B3 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
                     >
                       B3
                     </li>
                     <li
-                      id="B4" class="B4 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
+                      id="B4"
+                      class="B4 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
                     >
                       B4
                     </li>
@@ -194,22 +208,26 @@
                   <ul class="flex justify-between items-center mb-6">
                     <li>C</li>
                     <li
-                      id="C1" class="C1 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
+                      id="C1"
+                      class="C1 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
                     >
                       C1
                     </li>
                     <li
-                      id="C2" class="C2 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center mr-4"
+                      id="C2"
+                      class="C2 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center mr-4"
                     >
                       C2
                     </li>
                     <li
-                      id="C3" class="C3 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
+                      id="C3"
+                      class="C3 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
                     >
                       C3
                     </li>
                     <li
-                      id="C4" class="C4 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
+                      id="C4"
+                      class="C4 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
                     >
                       C4
                     </li>
@@ -217,22 +235,26 @@
                   <ul class="flex justify-between items-center mb-6">
                     <li>D</li>
                     <li
-                      id="D1" class="D1 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
+                      id="D1"
+                      class="D1 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
                     >
                       D1
                     </li>
                     <li
-                      id="D2" class="D2 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center mr-4"
+                      id="D2"
+                      class="D2 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center mr-4"
                     >
                       D2
                     </li>
                     <li
-                      id="D3" class="D3 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
+                      id="D3"
+                      class="D3 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
                     >
                       D3
                     </li>
                     <li
-                      id="D4" class="D4 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
+                      id="D4"
+                      class="D4 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
                     >
                       D4
                     </li>
@@ -240,22 +262,26 @@
                   <ul class="flex justify-between items-center mb-6">
                     <li>E</li>
                     <li
-                      id="E1" class="E1 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
+                      id="E1"
+                      class="E1 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
                     >
                       E1
                     </li>
                     <li
-                      id="E2" class="E2 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center mr-4"
+                      id="E2"
+                      class="E2 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center mr-4"
                     >
                       E2
                     </li>
                     <li
-                      id="E3" class="E3 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
+                      id="E3"
+                      class="E3 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
                     >
                       E3
                     </li>
                     <li
-                      id="E4" class="E4 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
+                      id="E4"
+                      class="E4 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
                     >
                       E4
                     </li>
@@ -263,22 +289,26 @@
                   <ul class="flex justify-between items-center mb-6">
                     <li>F</li>
                     <li
-                      id="F1" class="F1 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
+                      id="F1"
+                      class="F1 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
                     >
                       F1
                     </li>
                     <li
-                      id="F2" class="F2 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center mr-4"
+                      id="F2"
+                      class="F2 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center mr-4"
                     >
                       F2
                     </li>
                     <li
-                      id="F3" class="F3 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
+                      id="F3"
+                      class="F3 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
                     >
                       F3
                     </li>
                     <li
-                      id="F4" class="F4 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
+                      id="F4"
+                      class="F4 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
                     >
                       F4
                     </li>
@@ -286,22 +316,26 @@
                   <ul class="flex justify-between items-center mb-6">
                     <li>G</li>
                     <li
-                      id="G1" class="G1 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
+                      id="G1"
+                      class="G1 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
                     >
                       G1
                     </li>
                     <li
-                      id="G2" class="G2 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center mr-4"
+                      id="G2"
+                      class="G2 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center mr-4"
                     >
                       G2
                     </li>
                     <li
-                      id="G3" class="G3 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
+                      id="G3"
+                      class="G3 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
                     >
                       G3
                     </li>
                     <li
-                      id="G4" class="G4 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
+                      id="G4"
+                      class="G4 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
                     >
                       G4
                     </li>
@@ -309,22 +343,26 @@
                   <ul class="flex justify-between items-center mb-6">
                     <li>H</li>
                     <li
-                      id="H1" class="H1 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
+                      id="H1"
+                      class="H1 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
                     >
                       H1
                     </li>
                     <li
-                      id="H2" class="H2 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center mr-4"
+                      id="H2"
+                      class="H2 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center mr-4"
                     >
                       H2
                     </li>
                     <li
-                      id="H3" class="H3 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
+                      id="H3"
+                      class="H3 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
                     >
                       H3
                     </li>
                     <li
-                      id="G4" class="G4 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
+                      id="G4"
+                      class="G4 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
                     >
                       G4
                     </li>
@@ -332,22 +370,26 @@
                   <ul class="flex justify-between items-center mb-6">
                     <li>I</li>
                     <li
-                      id="I1" class="I1 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
+                      id="I1"
+                      class="I1 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
                     >
                       I1
                     </li>
                     <li
-                      id="I2" class="I2 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center mr-4"
+                      id="I2"
+                      class="I2 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center mr-4"
                     >
                       I2
                     </li>
                     <li
-                      id="I3" class="I3 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
+                      id="I3"
+                      class="I3 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
                     >
                       I3
                     </li>
                     <li
-                      id="I4" class="I4 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
+                      id="I4"
+                      class="I4 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
                     >
                       I4
                     </li>
@@ -355,22 +397,26 @@
                   <ul class="flex justify-between items-center mb-6">
                     <li>J</li>
                     <li
-                      id="J1" class="J1 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
+                      id="J1"
+                      class="J1 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
                     >
                       J1
                     </li>
                     <li
-                      id="J2" class="J2 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center mr-4"
+                      id="J2"
+                      class="J2 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center mr-4"
                     >
                       J2
                     </li>
                     <li
-                      id="J3" class="J3 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
+                      id="J3"
+                      class="J3 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
                     >
                       J3
                     </li>
                     <li
-                      id="J4" class="J4 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
+                      id="J4"
+                      class="J4 bg-gray1 px-12 py-4 text-center font-semibold rounded-xl items-center"
                     >
                       J4
                     </li>
@@ -379,30 +425,50 @@
               </div>
             </div>
             <div class="flex-1">
-              <h2 class="text-center">Select Your Seat</h2>
+              <h2 class="text-left font-bold text-2xl">Select Your Seat</h2>
               <div
                 class="container mx-auto border-dashed border rounded-md mt-4 mb-12"
               ></div>
-              <div class="bg-gray1 p-6">
+              <div class="font-semibold flex justify-between">
+                <p>
+                  Seat <span class="bg-gren px-2 rounded-md text-white">0</span>
+                </p>
+                <p>Class</p>
+                <p>Price</p>
+              </div>
+              <div
+                class="container mx-auto border-dashed border rounded-md mt-4 mb-2"
+              ></div>
+              <ul id="showTicket">
+             
+              </ul>
+              <div class="bg-gray1 py-8">
                 <div class="flex justify-between mb-4 font-bold text-xl">
                   <p>Total Price</p>
-                  <p>BDT <span>000</span></p>
+                  <p>BDT <span id="totalPrice">0</span></p>
+                </div>
+                <div id="discountDiv" class="flex hidden  justify-between mb-4 text-base">
+                  <p>Discount Price</p>
+                  <p>BDT <span id="discountPrice">0</span></p>
                 </div>
                 <div class="w-full pt-4 relative">
                   <input
                     type="text"
                     class="w-full p-4 bg-white rounded-md"
                     placeholder="Have your coupn code?"
+                    id="coupnCode"
                   />
-                  <label
-                    class="bg-gren absolute right-0 bottom-2 p-2 rounded-md font-bold text-white text-xl"
+                  <button 
+                    class="bg-gren disabled:opacity-55  absolute right-0 bottom-2 p-2 rounded-md font-bold text-white text-xl"
                     for=""
+                    id="applyBtn"
+                    
                     >Apply</label
                   >
                 </div>
                 <div class="flex justify-between font-bold mt-4">
                   <p>Grand Total</p>
-                  <p>BDT <span>000</span></p>
+                  <p>BDT <span id="grandTotal">0</span></p>
                 </div>
               </div>
               <form>

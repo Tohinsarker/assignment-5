@@ -1,0 +1,9 @@
+ .showSeatPlan{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+    font-size: 18px;
+}
+.pStyle{
+    padding-left: 50px;
+}
