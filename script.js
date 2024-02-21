@@ -78,11 +78,20 @@ applyBtnId.addEventListener("click", function () {
 
   if (getCouponCode == "NEW15") {
     let discountPrice = getTotalTicketPrice * 0.15;
-    document.getElementById("discountPrice").innerText = discountPrice;
-    document.getElementById("grandTotal").innerText =
-      getTotalTicketPrice - discountPrice;
+    getId("discountPrice").innerText = discountPrice;
+    getId("grandTotal").innerText = getTotalTicketPrice - discountPrice;
     document.getElementById("discountDiv").classList.remove("hidden");
-  } else {
+    getId('couponInputField').classList.add("hidden");
+
+  }else if(getCouponCode == "Couple 20"){
+    let discountPrice = getTotalTicketPrice * 0.20;
+    getId("discountPrice").innerText = discountPrice;
+    document.getElementById("discountDiv").classList.remove("hidden");
+    getId("grandTotal").innerText = getTotalTicketPrice - discountPrice;
+    getId('couponInputField').classList.add("hidden");
+  }
+  
+  else {
     alert("Wrong Coupon Code");
   }
 });
