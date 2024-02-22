@@ -134,6 +134,7 @@ document.getElementById("submit").addEventListener("click", function () {
   if (passNameLength == "") {
     // getId(nameMsg).style.classList.remove('hidden')
     getId("nameMsg").classList.remove("hidden");
+    return;
   }
 
   const pasNumber = document.getElementById("pNumber");
@@ -143,9 +144,9 @@ document.getElementById("submit").addEventListener("click", function () {
     getId("emptyNumberField").classList.remove("hidden");
   }
 
-  console.log(passNumber);
 
-  if (passNumber > 0) {
+
+  if ((passNumber > 0) && (pasNumber !=="")) {
     window.location.href = "./success.html";
   }
 });
@@ -157,7 +158,7 @@ function getId(id) {
 }
 
 let i = 0;
-document.getElementById("pName").addEventListener("keypress", function (event) {
+document.getElementById("pName").addEventListener("keyup", function (event) {
   i++;
 
   if (i >= 1) {
