@@ -4,7 +4,7 @@ const idnumber =
 let seats40 = 40;
 let selectSeatLength = 0;
 const bookedSeat = [];
-
+let text ;
 let phoneNumber=[];
 console.log('ohone', phoneNumber)
 const getShowTicketId = document.getElementById("showTicket");
@@ -35,10 +35,13 @@ document.getElementById("seat").addEventListener("click", function (e) {
       }
 
       
-      if ((selectSeatLength >= 1) && (phoneNumber>0) ) {
-        document.getElementById("submit").removeAttribute("disabled");
-      }
+      // disableNextBtn();
 
+      // if ((selectSeatLength >= 1)  ) {
+    
+
+      //   document.getElementById("submit").removeAttribute("disabled");
+      // }
       if (selectSeatLength <= 4) {
         getTotalTicketPrice = getTotalTicketPrice + getTicketPrice;
         document.getElementById("totalPrice").innerText = getTotalTicketPrice;
@@ -165,9 +168,13 @@ document.getElementById("pName").addEventListener("keypress", function (event) {
 
 
 
-document.getElementById("pNumber").addEventListener("keypress", function (e) {
- 
 
+document.getElementById("pNumber").addEventListener("keyup", function (e) {
+  text= e.target.value;
+  console.log('ttt',text)
+
+
+  disableNextBtn();
   phoneNumber++;
   if (phoneNumber >= 1) {
     getId("emptyNumberField").style.display = "none";
@@ -179,3 +186,15 @@ function pNUmberKeyPress(){
 let val = getId("pNumber").value;
 console.log('val', val)
 }
+
+function disableNextBtn(){
+  if ((selectSeatLength >= 1) && (text !== "") ) {
+    
+
+    document.getElementById("submit").removeAttribute("disabled");
+  }
+}
+
+
+console.log('se',selectSeatLength)
+disableNextBtn();
